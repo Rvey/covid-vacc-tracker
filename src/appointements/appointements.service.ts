@@ -18,10 +18,10 @@ export class AppointementsService {
   async create(
     createAppointementDto: CreateAppointementDto,
   ): Promise<Appointement> {
-    const createdAppointement = new this.AppointementModel(
-      CreateAppointementDto,
-    );
-    return createdAppointement.save();
+    // const createdAppointement = new this.AppointementModel(
+    //   CreateAppointementDto,
+    // );
+    return new this.AppointementModel(createAppointementDto).save();
   }
 
   findAll() {

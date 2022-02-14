@@ -17,6 +17,7 @@ export class AppointementsController {
 
   @Post()
   create(@Body() createAppointementDto: CreateAppointementDto) {
+    console.log(createAppointementDto);
     return this.appointementsService.create(createAppointementDto);
   }
 
