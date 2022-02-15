@@ -1,11 +1,10 @@
+import VerificationForm from "./components/Forms/VerificationForm";
 import "./index.css";
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline text-red-300">
-        Hello world!
-      </h1>
+    <VerificationForm />
     </div>
   );
 }
