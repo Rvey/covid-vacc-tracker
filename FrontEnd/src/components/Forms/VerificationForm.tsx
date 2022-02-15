@@ -7,8 +7,10 @@ const VerificationForm = () => {
       <Formik
         initialValues={{
           age: 0,
-          vaccinated: false,
+          VaccNumber:0,
           effected: "",
+          chronicDisease:"",
+          chronicDiseaseDetails:""
         }}
         // validationSchema={UserSchema}
         onSubmit={(values) => {
@@ -34,15 +36,48 @@ const VerificationForm = () => {
             {values.age > 12 && (
               <div className="mt-4">
                 <label>
-                  <h1>are you vaccinated</h1>
-                  <Field type="checkbox" name="firstVacc" />
-                  <Field type="checkbox" name="secondVacc" />
-                  <Field type="checkbox" name="vaccinated" />
-                </label>
+                  <label htmlFor="">firstVacc</label>
+                  <Field 
+                    type="radio"  
+                    className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" 
+                    name="VaccNumber"
+                    value={1} 
+                    defaultChecked={checked}
+                    onChange={setChecked(!checked)}
+                  />
+                  <label htmlFor="">secondVacc</label>
+                  <Field 
+                    type="radio" 
+                    name="VaccNumber" 
+                    className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" 
+                    value={2} 
+                  />
+                  <label htmlFor="">thirdVacc</label>
+                  <Field 
+                    type="radio" 
+                    name="VaccNumber" 
+                    className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" 
+
+                    value={3} 
+                  />
+                </label>  
               </div>
             )}
 
-            {values.vaccinated && <div>are u already infected</div>}
+            { values.VaccNumber == 1 ?(
+              <div>
+                <Field id="country-option-1" type="radio" name="countries" value="USA" className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" aria-labelledby="country-option-1" aria-describedby="country-option-1" checked />             
+              </div>
+            ): values.VaccNumber == 2 ?(
+              <div>
+                <h2>rass tani</h2>
+              </div>
+            ):values.VaccNumber == 3 ?(
+              <div>
+                <h3>rass talat</h3>
+              </div>
+            ):null
+          }
 
             <div className="mt-8 flex justify-between">
               <button
