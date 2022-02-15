@@ -15,4 +15,5 @@ export class Appointement {
   date: Date;
 }
 
+
 export const appointementSchema = SchemaFactory.createForClass(Appointement);
