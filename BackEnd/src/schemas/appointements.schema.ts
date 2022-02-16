@@ -7,10 +7,26 @@ export type AppointementDocument = Appointement & Document;
 export class Appointement {
   @Prop()
   name: string;
-
   @Prop()
-  age: number;
-
+  age: string;
+  @Prop()
+  vaccinNumber: Number;
+  @Prop()
+  chronicDisease: string;
+  @Prop()
+  effected: string;
+  @Prop()
+  effectedDetails: string;
+  @Prop()
+  chronicDiseaseDetails: string;
+  @Prop()
+  phoneNumber: string;
+  @Prop()
+  email: string;
+  @Prop()
+  adress: string;
+  @Prop()
+  cin: string;
   @Prop()
   date: Date;
 }
