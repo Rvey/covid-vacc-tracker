@@ -30,7 +30,16 @@ const VerificationForm = () => {
               />
             </div>
 
-            {values.age > 12 && (
+
+
+
+{
+  values.age > 12 && 
+
+  <div>
+
+
+           
               <div className="my-3 ">
                 <h1 className="font-semibold mb-2">Vaccine</h1>
                 <Field
@@ -44,9 +53,13 @@ const VerificationForm = () => {
                   <option value="thirdVacc">Third Vaccine</option>
                 </Field>
               </div>
-            )}
+           
 
-            {values.VaccNumber == "firstVacc" && values.age > 12 ? (
+
+
+
+
+            {values.VaccNumber == "firstVacc" ? (
               <div>
                 <div className="my-4 flex flex-col gap-4">
                   <h2 className="font-semibold">
@@ -74,7 +87,7 @@ const VerificationForm = () => {
                   </div>
                 </div>
               </div>
-            ) : values.VaccNumber == "secondVacc" && values.age > 12 ? (
+            ) : values.VaccNumber == "secondVacc" ? (
               <div>
                 <div className="my-4 flex flex-col gap-4">
                   <h2 className="font-semibold">
@@ -102,7 +115,7 @@ const VerificationForm = () => {
                   </div>
                 </div>
               </div>
-            ) : values.VaccNumber == "thirdVacc" && values.age > 12 ? (
+            ) : values.VaccNumber == "thirdVacc" ? (
               <div>
               <div className="my-4 flex flex-col gap-4">
                 <h2 className="font-semibold">
@@ -132,6 +145,9 @@ const VerificationForm = () => {
             </div>
             ) : null}
 
+
+
+
             {/* side effect first vaccine disc */}
             {values.chronicDisease == "sideEffect" && values.VaccNumber == "secondVacc" && (
               <div className="mb-3">
@@ -155,12 +171,13 @@ const VerificationForm = () => {
               </div>
             )}
 
-            {values.chronicDisease == "yes" && (
+            {values.chronicDisease == "yes" && values.VaccNumber == "firstVacc"  && (
               <div className="mb-3">
                 <h2>treatment www.google.com</h2>
               </div>
             )}
 
+          
             {values.chronicDisease === "sideEffect" || values.chronicDisease === "sideEffect2"  && (
               <div className="mt-8 flex justify-end">
                 <button
@@ -171,6 +188,11 @@ const VerificationForm = () => {
                 </button>
               </div>
             )}
+
+
+</div>
+}
+
           </Form>
         )}
       </Formik>
