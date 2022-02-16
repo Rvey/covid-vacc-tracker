@@ -41,7 +41,9 @@ const VerificationForm = () => {
                     className="w-6 h-6 cursor-pointer"
                     value="1"
                   ></Field>
-                  <label className="text-center text-white">First vaccine</label>
+                  <label className="text-center text-white">
+                    First vaccine
+                  </label>
                 </div>
                 <div className="flex items-center gap-3 bg-blue-500 p-1 rounded-md">
                   <Field
@@ -50,7 +52,9 @@ const VerificationForm = () => {
                     className="w-6 h-6 cursor-pointer"
                     value="2"
                   />
-                  <label className="text-center text-white">Second vaccine</label>
+                  <label className="text-center text-white">
+                    Second vaccine
+                  </label>
                 </div>
                 <div className="flex items-center gap-3 bg-green-500 p-1 rounded-md">
                   <Field
@@ -59,7 +63,9 @@ const VerificationForm = () => {
                     className="w-6 h-6 cursor-pointer"
                     value="3"
                   />
-                  <label className="text-center text-white">third vaccine</label>
+                  <label className="text-center text-white">
+                    third vaccine
+                  </label>
                 </div>
               </div>
             )}
@@ -67,14 +73,14 @@ const VerificationForm = () => {
             {values.VaccNumber == "1" ? (
               <div>
                 <div className="mt-4 flex gap-4">
-                  <h2  className="text-center">you have a chronic disease ?</h2>
+                  <h2 className="text-center">you have a chronic disease ?</h2>
                   <div className="flex items-center gap-3 bg-yellow-500 p-1 rounded-md">
                     <Field
                       type="radio"
                       name="chronicDisease"
                       className="w-6 h-6 cursor-pointer"
                       value="no"
-                    ></Field>
+                    />
                     <label className="text-center text-white">No</label>
                   </div>
                   <div className="flex items-center gap-3 bg-black p-1 rounded-md">
@@ -86,7 +92,7 @@ const VerificationForm = () => {
                     />
                     <label className="text-center text-white">Yes</label>
                   </div>
-                </div>              
+                </div>
               </div>
             ) : values.VaccNumber == "2" ? (
               <div>
@@ -101,7 +107,9 @@ const VerificationForm = () => {
             {values.chronicDisease == "yes" ? (
               <div className="flex justify-center">
                 <div className="mb-3 xl:w-96">
-                  <select className="form-select appearance-none
+                  <Field
+                    component="select"
+                    className="form-select appearance-none
                     block
                     w-full
                     px-3
@@ -115,19 +123,23 @@ const VerificationForm = () => {
                     transition
                     ease-in-out
                     m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
-                      <option selected>Open this select menu</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                  </select>
+                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    aria-label="Default select example"
+                    id="chronicDisease"
+                    name="chronicDisease"
+                  >
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </Field>
                 </div>
               </div>
-            ):values.chronicDisease == "no" ?(
-                <div>
-                  <h2> nadddi am3alam</h2>
-                </div>
-            ): null}
+            ) : values.chronicDisease == "no" ? (
+              <div>
+                <h2> nadddi am3alam</h2>
+              </div>
+            ) : null}
 
             <div className="mt-8 flex justify-between">
               <button
@@ -147,7 +159,6 @@ const VerificationForm = () => {
         )}
       </Formik>
     </div>
-    
   );
 };
 export default VerificationForm;
