@@ -9,7 +9,7 @@ function App() {
       <VerificationForm />
 
       <div>
-        <h1>container</h1>
+        {/* <h1>container</h1>
         {step == 1 ? (
           <div>step 1</div>
         ) : step == 2 ? (
@@ -26,7 +26,7 @@ function App() {
           <button onClick={() => setStep(step - 1)} className="p-3">
             back
           </button>
-        )}
+        )} */}
       </div>
     </div>
   );
