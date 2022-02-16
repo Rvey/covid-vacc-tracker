@@ -4,8 +4,8 @@ interface CheckProps {}
 
 const Check: React.FunctionComponent<CheckProps> = () => {
   return (
-    <section className="pb-0 md:py-32 bg-white">
-      <div className="container px-4 mx-auto mb-16">
+    <section className="pb-0 bg-white">
+      <div className="container px-4 mb-16">
         <div className="w-full md:w-3/5 lg:w-1/2">
           <div className="max-w-sm mx-auto">
             <div className="mb-6 text-center">
