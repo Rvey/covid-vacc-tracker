@@ -74,7 +74,7 @@ const VerificationForm = () => {
                   </div>
                 </div>
               </div>
-            ) : values.VaccNumber == "secondVacc" && values.age > 12  ? (
+            ) : values.VaccNumber == "secondVacc" && values.age > 12 ? (
               <div>
                 <div className="my-4 flex flex-col gap-4">
                   <h2 className="font-semibold">
@@ -102,7 +102,7 @@ const VerificationForm = () => {
                   </div>
                 </div>
               </div>
-            ) : values.VaccNumber == "thirdVacc" && values.age > 12  ? (
+            ) : values.VaccNumber == "thirdVacc" && values.age > 12 ? (
               <div>
               <div className="my-4 flex flex-col gap-4">
                 <h2 className="font-semibold">
@@ -129,42 +129,11 @@ const VerificationForm = () => {
                   </div>
                 </div>
               </div>
-<<<<<<< HEAD
-            ) : values.VaccNumber == "2" ? (
-              <div>
-                <div className="mt-4 flex gap-4">
-                  <h2 className="text-center">you have a chronic disease ?</h2>
-                  <div className="flex items-center gap-3 bg-yellow-500 p-1 rounded-md">
-                    <Field
-                      type="radio"
-                      name="chronicDisease"
-                      className="w-6 h-6 cursor-pointer"
-                      value="no"
-                    />
-                    <label className="text-center text-white">No</label>
-                  </div>
-                  <div className="flex items-center gap-3 bg-black p-1 rounded-md">
-                    <Field
-                      type="radio"
-                      name="chronicDisease"
-                      className="w-6 h-6 cursor-pointer"
-                      value="yes"
-                    />
-                    <label className="text-center text-white">Yes</label>
-                  </div>
-                </div>
-              </div>
-            ) : values.VaccNumber == "3" ? (
-              <div>
-                <h3>rass talat</h3>
-              </div>
-=======
             </div>
->>>>>>> 5fb68196b8f555ced44b1a4f21a761bd7be87ddd
             ) : null}
 
             {/* side effect first vaccine disc */}
-            {values.chronicDisease == "sideEffect" && values.VaccNumber == "secondVacc"   && (
+            {values.chronicDisease == "sideEffect" && (
               <div className="mb-3">
                 <Field
                   name="SideEffectDesc"
@@ -175,7 +144,7 @@ const VerificationForm = () => {
               </div>
             )}
                 {/* side effect second vaccine disc */}
-                {values.chronicDisease == "sideEffect2" && values.VaccNumber == "thirdVacc"   && (
+                {values.chronicDisease == "sideEffect2" && (
               <div className="mb-3">
                 <Field
                   name="SideEffectDesc"
