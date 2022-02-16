@@ -34,41 +34,13 @@ const VerificationForm = () => {
             </div>
 
             {values.age > 12 && (
-              <div className="mt-4 flex gap-4">
-                <div className="flex items-center gap-3 bg-red-500 p-1 rounded-md">
-                  <Field
-                    type="radio"
-                    name="VaccNumber"
-                    className="w-6 h-6 cursor-pointer"
-                    value="1"
-                  ></Field>
-                  <label className="text-center text-white">
-                    First vaccine
-                  </label>
-                </div>
-                <div className="flex items-center gap-3 bg-blue-500 p-1 rounded-md">
-                  <Field
-                    type="radio"
-                    name="VaccNumber"
-                    className="w-6 h-6 cursor-pointer"
-                    value="2"
-                  />
-                  <label className="text-center text-white">
-                    Second vaccine
-                  </label>
-                </div>
-                <div className="flex items-center gap-3 bg-green-500 p-1 rounded-md">
-                  <Field
-                    type="radio"
-                    name="VaccNumber"
-                    className="w-6 h-6 cursor-pointer"
-                    value="3"
-                  />
-                  <label className="text-center text-white">
-                    third vaccine
-                  </label>
-                </div>
-              </div>
+              <div className="mb-3">
+              <Field name="VaccNumber" as="select" className="appearance-none w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </Field>
+            </div>
             )}
 
             {values.VaccNumber == "1" ? (
