@@ -96,7 +96,27 @@ const VerificationForm = () => {
               </div>
             ) : values.VaccNumber == "2" ? (
               <div>
-                <h2>rass tani</h2>
+                <div className="mt-4 flex gap-4">
+                  <h2 className="text-center">you have a chronic disease ?</h2>
+                  <div className="flex items-center gap-3 bg-yellow-500 p-1 rounded-md">
+                    <Field
+                      type="radio"
+                      name="chronicDisease"
+                      className="w-6 h-6 cursor-pointer"
+                      value="no"
+                    />
+                    <label className="text-center text-white">No</label>
+                  </div>
+                  <div className="flex items-center gap-3 bg-black p-1 rounded-md">
+                    <Field
+                      type="radio"
+                      name="chronicDisease"
+                      className="w-6 h-6 cursor-pointer"
+                      value="yes"
+                    />
+                    <label className="text-center text-white">Yes</label>
+                  </div>
+                </div>
               </div>
             ) : values.VaccNumber == "3" ? (
               <div>
