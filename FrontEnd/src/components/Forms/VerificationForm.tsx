@@ -106,15 +106,15 @@ const VerificationForm = () => {
             ) : null}
 
             {values.chronicDisease == "yes" ? (
-              <div className="flex justify-center">
-                <div className="mb-3 xl:w-96">
-                  <Field name="colors" as="select" className="my-select">
+             
+                <div className="mb-3">
+                  <Field name="colors" as="select" className="appearance-none w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                   </Field>
                 </div>
-              </div>
+            
             ) : values.chronicDisease == "no" ? (
               <div>
                 <h2> nadddi am3alam</h2>
