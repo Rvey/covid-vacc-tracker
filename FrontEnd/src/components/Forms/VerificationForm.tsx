@@ -10,6 +10,7 @@ const VerificationForm = () => {
           effected: "",
           chronicDisease: "",
           chronicDiseaseDetails: "",
+          colors:"",
         }}
         // validationSchema={UserSchema}
         onSubmit={(values) => {
@@ -107,28 +108,7 @@ const VerificationForm = () => {
             {values.chronicDisease == "yes" ? (
               <div className="flex justify-center">
                 <div className="mb-3 xl:w-96">
-                  <Field
-                    component="select"
-                    className="form-select appearance-none
-                    block
-                    w-full
-                    px-3
-                    py-1.5
-                    text-base
-                    font-normal
-                    text-gray-700
-                    bg-white bg-clip-padding bg-no-repeat
-                    border border-solid border-gray-300
-                    rounded
-                    transition
-                    ease-in-out
-                    m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    aria-label="Default select example"
-                    id="chronicDisease"
-                    name="chronicDisease"
-                  >
-                    <option selected>Open this select menu</option>
+                  <Field name="colors" as="select" className="my-select">
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -143,7 +123,7 @@ const VerificationForm = () => {
 
             <div className="mt-8 flex justify-between">
               <button
-                type="button"
+                type="submit"
                 className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
               >
                 Submit
