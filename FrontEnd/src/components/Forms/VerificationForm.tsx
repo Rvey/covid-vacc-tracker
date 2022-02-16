@@ -133,7 +133,7 @@ const VerificationForm = () => {
             ) : null}
 
             {/* side effect first vaccine disc */}
-            {values.chronicDisease == "sideEffect" && (
+            {values.chronicDisease == "sideEffect" && values.VaccNumber == "secondVacc" && (
               <div className="mb-3">
                 <Field
                   name="SideEffectDesc"
@@ -144,7 +144,7 @@ const VerificationForm = () => {
               </div>
             )}
                 {/* side effect second vaccine disc */}
-                {values.chronicDisease == "sideEffect2" && (
+                {values.chronicDisease == "sideEffect2" && values.VaccNumber == "thirdVacc" && (
               <div className="mb-3">
                 <Field
                   name="SideEffectDesc"
