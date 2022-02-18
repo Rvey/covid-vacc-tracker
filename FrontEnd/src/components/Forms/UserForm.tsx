@@ -5,8 +5,7 @@ import GoogleMap from "./googleMap";
  
 const UserForm = () => {
     return ( 
-        <div>
-              <Formik
+      <Formik
         initialValues={{
           age: 0,
           VaccNumber: "",
@@ -23,7 +22,7 @@ const UserForm = () => {
             <div className="mt-4">
               <label
                 htmlFor="firstName"
-                className="block mb-2 text-md font-semibold"
+                className="block mb-2 text-md font-semibold text-white"
               >firstName</label>
               <Field
                 type="text"
@@ -35,7 +34,7 @@ const UserForm = () => {
             <div className="mt-4">
               <label
                 htmlFor="firstName"
-                className="block mb-2 text-md font-semibold"
+                className="block mb-2 text-md font-semibold text-white"
               >lastName</label>
               <Field
                 type="text"
@@ -47,7 +46,7 @@ const UserForm = () => {
             <div className="mt-4">
               <label
                 htmlFor="Adresse"
-                className="block mb-2 text-md font-semibold"
+                className="block mb-2 text-md font-semibold text-white"
               >Adresse</label>
               <Field
                 type="text"
@@ -61,8 +60,7 @@ const UserForm = () => {
             </div>
           </Form>
         )}
-      </Formik>
-        </div>
+          </Formik>
      );
 }
  

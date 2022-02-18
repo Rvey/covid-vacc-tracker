@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const VerificationForm = () => {
   return (
-    <div>
+    <div className="w-full">
       <Formik
         initialValues={{ 
           age: 0,
@@ -17,13 +17,12 @@ const VerificationForm = () => {
         }}
       >
         {({ errors, touched, values }) => (
-          <Form>
-            <h1 className="font-semibold mb-2">Enter Age</h1>
-            <div className="mt-4">
+          <Form  className="w-full">
+            <div className="mt-4 w-full">
               <label
                 htmlFor="age"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              ></label>
+                className="font-semibold leading-none text-white"
+                >Enter Age</label>
               <Field
                 type="number"
                 id="age"
@@ -35,7 +34,7 @@ const VerificationForm = () => {
             {values.age > 12 && (
               <div>
                 <div className="my-3 ">
-                  <h1 className="font-semibold mb-2">Vaccine</h1>
+                  <h1 className="font-semibold mb-2 text-white">Vaccine</h1>
                   <Field
                     name="VaccNumber"
                     as="select"
@@ -51,7 +50,7 @@ const VerificationForm = () => {
                 {values.VaccNumber == "firstVacc" ? (
                   <div>
                     <div className="my-4 flex flex-col gap-4">
-                      <h2 className="font-semibold">
+                      <h2 className="font-semibold text-white">
                         you have a chronic disease ?
                       </h2>
                       <div className="flex ">
@@ -62,7 +61,7 @@ const VerificationForm = () => {
                             className="w-4 h-4 cursor-pointer"
                             value="no"
                           />
-                          <label className="text-center">No</label>
+                          <label className="text-center text-white">No</label>
                         </div>
                         <div className="flex items-center gap-3 p-1 rounded-md">
                           <Field
@@ -71,7 +70,7 @@ const VerificationForm = () => {
                             className="w-4 h-4 cursor-pointer"
                             value="yes"
                           />
-                          <label className="text-center">Yes</label>
+                          <label className="text-center text-white">Yes</label>
                         </div>
                       </div>
                     </div>
@@ -79,7 +78,7 @@ const VerificationForm = () => {
                 ) : values.VaccNumber == "secondVacc" ? (
                   <div>
                     <div className="my-4 flex flex-col gap-4">
-                      <h2 className="font-semibold">
+                      <h2 className="font-semibold text-white">
                         you have any side effect from the first vaccine ?
                       </h2>
                       <div className="flex ">
@@ -90,7 +89,7 @@ const VerificationForm = () => {
                             className="w-4 h-4 cursor-pointer"
                             value="noSideEffect"
                           />
-                          <label className="text-center">No</label>
+                          <label className="text-center text-white">No</label>
                         </div>
                         <div className="flex items-center gap-3 p-1 rounded-md">
                           <Field
@@ -99,7 +98,7 @@ const VerificationForm = () => {
                             className="w-4 h-4 cursor-pointer"
                             value="sideEffect"
                           />
-                          <label className="text-center">Yes</label>
+                          <label className="text-center text-white">Yes</label>
                         </div>
                       </div>
                     </div>
@@ -107,7 +106,7 @@ const VerificationForm = () => {
                 ) : values.VaccNumber == "thirdVacc" ? (
                   <div>
                     <div className="my-4 flex flex-col gap-4">
-                      <h2 className="font-semibold">
+                      <h2 className="font-semibold text-white">
                         you have any side effect from the second vaccine ?
                       </h2>
                       <div className="flex ">
@@ -118,7 +117,7 @@ const VerificationForm = () => {
                             className="w-4 h-4 cursor-pointer"
                             value="noSideEffect"
                           />
-                          <label className="text-center">No</label>
+                          <label className="text-center text-white">No</label>
                         </div>
                         <div className="flex items-center gap-3 p-1 rounded-md">
                           <Field
@@ -127,7 +126,7 @@ const VerificationForm = () => {
                             className="w-4 h-4 cursor-pointer"
                             value="sideEffect2"
                           />
-                          <label className="text-center">Yes</label>
+                          <label className="text-center text-white">Yes</label>
                         </div>
                       </div>
                     </div>
@@ -162,7 +161,7 @@ const VerificationForm = () => {
                 {values.chronicDisease == "yes" &&
                   values.VaccNumber == "firstVacc" && (
                     <div className="mb-3">
-                      <h2>treatment www.google.com</h2>
+                      <h2 className="text-white">treatment www.google.com</h2>
                     </div>
                   )}
 
@@ -171,7 +170,7 @@ const VerificationForm = () => {
                     <div className="mt-8 flex justify-end">
                       <button
                         type="submit"
-                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                        className="text-white bg-blue-700 hover:bg-blue-800 text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
                       >
                         Next
                       </button>
