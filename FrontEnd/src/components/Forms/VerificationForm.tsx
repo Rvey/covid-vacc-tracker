@@ -1,7 +1,10 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useState } from "react";
 
 
 const VerificationForm = () => {
+  const [dataVaccin, setDataVaccin]= useState([''])
+  
   return (
     <div className="w-full">
       <Formik
@@ -11,11 +14,11 @@ const VerificationForm = () => {
           chronicDisease: "",
           SideEffectDesc: "",
         }}
-        // validationSchema={UserSchema}
         onSubmit={(values) => {
-          console.log(values);
+          console.log(values)
         }}
       >
+        
         {({ errors, touched, values }) => (
           <Form  className="w-full">
             <div className="mt-4 w-full">
@@ -30,6 +33,7 @@ const VerificationForm = () => {
                 name="age"
               />
             </div>
+            {/* {setDataVaccin(values)} */}
 
             {values.age > 12 && (
               <div>
@@ -158,24 +162,15 @@ const VerificationForm = () => {
                     </div>
                   )}
 
+   
                 {values.chronicDisease == "yes" &&
                   values.VaccNumber == "firstVacc" && (
                     <div className="mb-3">
-                      <h2 className="text-white">treatment www.google.com</h2>
+                      <h2 className="text-white">www.google.com</h2>
                     </div>
                   )}
 
-                {values.chronicDisease === "sideEffect" ||
-                  (values.chronicDisease === "sideEffect2" && (
-                    <div className="mt-8 flex justify-end">
-                      <button
-                        type="submit"
-                        className="text-white bg-blue-700 hover:bg-blue-800 text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-                      >
-                        Next
-                      </button>
-                    </div>
-                  ))}
+                
               </div>
             )}
           </Form>

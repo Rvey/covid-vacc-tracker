@@ -3,7 +3,7 @@ import UserForm from "../Forms/UserForm";
 import VerificationForm from "../Forms/VerificationForm";
 import MailConfirmation from '../Forms/MailConfirmation'
 
-const Check  = () => {
+const Check  = ({ values }:any) => {
   const [next, setNext]=  useState(0)
   
   return (
@@ -23,11 +23,11 @@ const Check  = () => {
               ):null
             }
           </div>
-          <div className="d-flex ">
+          <div className="flex ml-90">
             {
               next >=1 && (
                   <button 
-                  className="flex-res-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded m-2 "
+                  className="flex-res-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded  mt-5 ml-3 "
                   onClick={(e)=>{setNext(next-1)}}
                   >Back</button>
                 )
@@ -36,7 +36,7 @@ const Check  = () => {
               {
                 next <= 1 && (
                   <button 
-                  className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-sm text-white font-bold py-2 px-4 rounded m-2" 
+                  className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-sm text-white font-bold py-2 px-4 rounded mt-5 ml-3" 
                   type="button"                  
                   onClick={(e)=>{setNext(next+1)}} 
                   >Next</button>
@@ -45,7 +45,7 @@ const Check  = () => {
               {
                 next == 2 && (
                   <button 
-                    className="bg-transparent mx-5 hover:bg-blue-400 text-blue-700 font-semibold hover:text-white text-sm py-2 px-4 border border-blue-200 hover:border-transparent rounded m-2" 
+                    className="bg-transparent mx-5 hover:bg-yellow-400 text-yellow-700 font-semibold hover:text-white text-sm py-2 px-4 border border-yellow-200 hover:border-transparent rounded mt-5 ml-3" 
                   >Send</button>
                 )
             }
@@ -66,7 +66,7 @@ const Check  = () => {
   
             <div className="flex justify-center text-gray-800 dark:text-white md:justify-start items-center space-x-4 py-4 border-b border-gray-200 w-full">
            
-              <p className="cursor-pointer text-sm leading-5 ">david89@gmail.com</p>
+              <p className="cursor-pointer text-sm leading-5">david89@gmail.com</p>
             </div>
           </div>
           <div className="flex justify-between xl:h-full items-stretch w-full flex-col mt-6 md:mt-0">
