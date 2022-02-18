@@ -45,7 +45,7 @@ const Check  = ({ values }:any) => {
               {
                 next == 2 && (
                   <button 
-                    className="bg-transparent mx-5 hover:bg-yellow-400 text-yellow-700 font-semibold hover:text-white text-sm py-2 px-4 border border-yellow-200 hover:border-transparent rounded mt-5 ml-3" 
+                    className="bg-transparent mx-5 hover:bg-yellow-400 text-yellow-400 font-semibold hover:text-white text-sm py-2 px-4 border border-yellow-200 hover:border-transparent rounded mt-5 ml-3" 
                   >Send</button>
                 )
             }

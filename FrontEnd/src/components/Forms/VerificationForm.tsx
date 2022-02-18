@@ -1,8 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useState } from "react";
 
+interface MyFormValues {
+  VaccNumber: string;
+}
 
-const VerificationForm = () => {
+const VerificationForm: React.FC<{}>= () => {
   
   return (
     <div className="w-full">
