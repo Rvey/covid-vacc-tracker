@@ -8,7 +8,7 @@ const render = (status: Status) => {
 
 
 
-const reversGeoLocation = ({ lat, lng }: string) => {
+const reversGeoLocation = ({ lat, lng  }: any) => {
   fetch(
     `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lng}&format=json&apiKey=${`690fb23b993b485e9957564b1719d82a`}`
   )
@@ -48,7 +48,7 @@ const GoogleMap: React.VFC = () => {
         <pre key={i}>
           lat :{JSON.stringify(latLng.toJSON().lat, null, 2)}
           lng :{JSON.stringify(latLng.toJSON().lng, null, 2)}
-          
+
         </pre>
       ))}
       <button onClick={() => setClicks([])}>Clear</button>
