@@ -1,8 +1,11 @@
+import { useState } from "react";
+import UserForm from "../Forms/UserForm";
 import VerificationForm from "../Forms/VerificationForm";
 
 interface CheckProps {}
 
 const Check: React.FunctionComponent<CheckProps> = () => {
+  const [next, setNext] = useState(false);
   return (
     <section className="pb-0 bg-white">
       <div className="container px-4 mb-16">
@@ -17,13 +20,19 @@ const Check: React.FunctionComponent<CheckProps> = () => {
                 />
               </a>
               <h3 className="mb-4 text-2xl md:text-3xl font-bold">
-                Sign in to your account
+                COVID19
               </h3>
               <p className="text-lg text-coolGray-500 font-medium">
                 Enter your Age
               </p>
-            </div>
-            <VerificationForm />
+            </div>{
+              next ? 
+
+            <VerificationForm setNext={setNext} />
+          :
+
+            <UserForm setNext={setNext} />
+          }
           </div>
         </div>
       </div>
