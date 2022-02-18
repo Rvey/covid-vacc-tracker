@@ -1,11 +1,14 @@
 import { useState } from "react";
 import UserForm from "../Forms/UserForm";
 import VerificationForm from "../Forms/VerificationForm";
+import MailConfirmation from '../Forms/MailConfirmation'
 
 interface CheckProps {}
 
 const Check: React.FunctionComponent<CheckProps> = () => {
-  const [next, setNext] = useState(false);
+  const [next, setNext] = useState(0);
+  console.log(next);
+  
   return (
     <section className="pb-0 bg-white">
       <div className="container px-4 mb-16">
@@ -25,14 +28,44 @@ const Check: React.FunctionComponent<CheckProps> = () => {
               <p className="text-lg text-coolGray-500 font-medium">
                 Enter your Age
               </p>
-            </div>{
-              next ? 
+            </div>
+            {
+              next == 0 ?(
+                <VerificationForm />
+              ): next == 1 ?(
+                <UserForm  />
+              ) : next == 2  ?(
+                <MailConfirmation />
+              ):null
+            }
 
-            <VerificationForm setNext={setNext} />
-          :
+            <div className="mt-5 ml-20">
+                {
+                  next >=1 && (
+                    <button 
+                      className="bg-green-500  hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded" 
+                      onClick={(e)=>{setNext(next-1)}}
+                    >Back</button>
+                  )
+                }
+                          
+                {
+                  next <= 1 && (
+                    <button 
+                      className="bg-transparent mx-5 hover:bg-blue-400 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-200 hover:border-transparent rounded" 
+                      onClick={(e)=>{setNext(next+1)}} 
+                    >Next</button>
+                  )
+                }
+                {
+                  next == 2 && (
+                    <button 
+                      className="bg-transparent mx-5 hover:bg-blue-400 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-200 hover:border-transparent rounded" 
+                    >Send</button>
+                  )
+                }
 
-            <UserForm setNext={setNext} />
-          }
+            </div>
           </div>
         </div>
       </div>

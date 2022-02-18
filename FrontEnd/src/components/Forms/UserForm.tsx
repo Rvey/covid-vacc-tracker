@@ -2,11 +2,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import GoogleMap from "./googleMap";
 
-interface UserFormProps {
-    setNext: (val: boolean) => void
-}
  
-const UserForm: React.FC<UserFormProps> = () => {
+const UserForm = () => {
     return ( 
         <div>
               <Formik
@@ -60,7 +57,6 @@ const UserForm: React.FC<UserFormProps> = () => {
               />
             </div>
             <div className="w-[34em] h-[34em]">
-
             <GoogleMap />
             </div>
           </Form>

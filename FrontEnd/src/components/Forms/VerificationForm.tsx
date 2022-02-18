@@ -1,12 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-interface VProps {
-  setNext: (val: boolean) => void
-}
-const VerificationForm: React.FC<VProps> = ({setNext}) => {
+
+
+const VerificationForm = () => {
   return (
     <div>
       <Formik
-        initialValues={{
+        initialValues={{ 
           age: 0,
           VaccNumber: "",
           chronicDisease: "",

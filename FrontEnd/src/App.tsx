@@ -7,7 +7,6 @@ function App() {
   const [step, setStep] = useState(1);
   return (
     <div >
-      {/* <VerificationForm /> */}
       <Check />
     </div>
   );

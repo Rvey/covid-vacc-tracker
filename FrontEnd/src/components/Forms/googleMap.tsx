@@ -2,13 +2,13 @@ import * as React from "react";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { createCustomEqual } from "fast-equals";
 import { isLatLngLiteral } from "@googlemaps/typescript-guards";
+
 const render = (status: Status) => {
   return <h1>{status}</h1>;
 };
 
-
-
 const reversGeoLocation = ({ lat, lng  }: any) => {
+
   fetch(
     `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lng}&format=json&apiKey=${`690fb23b993b485e9957564b1719d82a`}`
   )
@@ -37,6 +37,7 @@ const GoogleMap: React.VFC = () => {
   const form = (
     <div
       style={{
+        // marginTop: 20,
         padding: "1rem",
         flexBasis: "250px",
         height: "100%",
@@ -48,7 +49,6 @@ const GoogleMap: React.VFC = () => {
         <pre key={i}>
           lat :{JSON.stringify(latLng.toJSON().lat, null, 2)}
           lng :{JSON.stringify(latLng.toJSON().lng, null, 2)}
-
         </pre>
       ))}
       <button onClick={() => setClicks([])}>Clear</button>
@@ -173,8 +173,6 @@ const deepCompareEqualsForMaps = createCustomEqual(
     ) {
       return new google.maps.LatLng(a).equals(new google.maps.LatLng(b));
     }
-
-    // TODO extend to other types
 
     // use fast-equals for other objects
     return deepEqual(a, b);
