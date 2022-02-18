@@ -3,7 +3,6 @@ import { useState } from "react";
 
 
 const VerificationForm = () => {
-  const [dataVaccin, setDataVaccin]= useState([''])
   
   return (
     <div className="w-full">
@@ -33,7 +32,6 @@ const VerificationForm = () => {
                 name="age"
               />
             </div>
-            {/* {setDataVaccin(values)} */}
 
             {values.age > 12 && (
               <div>
