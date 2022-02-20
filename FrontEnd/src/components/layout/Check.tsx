@@ -42,12 +42,13 @@ const Check  = ({ values }:any) => {
                   >Next</button>
                 )
               }
+
               {
                 next == 2 && (
                   <button 
                     className="bg-transparent mx-5 hover:bg-yellow-400 text-yellow-400 font-semibold hover:text-white text-sm py-2 px-4 border border-yellow-200 hover:border-transparent rounded mt-5 ml-3" 
                   >Send</button>
-                )
+              )
             }
           </div>
         </div>
@@ -76,12 +77,9 @@ const Check  = ({ values }:any) => {
                 <p className="w-48 lg:w-full dark:text-gray-300 xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">180 North King Street, Northhampton MA 1060</p>
               </div>
               <div className="flex justify-center md:justify-start items-center md:items-start flex-col space-y-4">
-                <p className="text-base dark:text-white font-semibold leading-4 text-center md:text-left text-gray-800">Billing Address</p>
+                <p className="text-base dark:text-white font-semibold leading-4 text-center md:text-left text-gray-800">Vaccin details</p>
                 <p className="w-48 lg:w-full dark:text-gray-300 xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">180 North King Street, Northhampton MA 1060</p>
               </div>
-            </div>
-            <div className="flex w-full justify-center items-center md:justify-start md:items-start">
-              <button className="mt-6 md:mt-0 dark:border-white dark:hover:bg-gray-900 dark:bg-transparent dark:text-white py-5 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 border border-gray-800 font-medium w-96 2xl:w-full text-base font-medium leading-4 text-gray-800">Edit Details</button>
             </div>
           </div>
         </div>

@@ -49,9 +49,9 @@ const UserForm = () => {
               >Cin</label>
               <Field
                 type="text"
-                id="lastName"
+                id="Cin"
                 className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-                name="lastName"
+                name="Cin"
               />
             </div>
             <div className="mt-4">
@@ -61,9 +61,9 @@ const UserForm = () => {
               >Adresse</label>
               <Field
                 type="text"
-                id="Adresse"
+                id="Adress"
                 className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-                name="Adresse"
+                name="Adress"
               />
             </div>
             {/* <div className="w-[34em] h-[34em]">

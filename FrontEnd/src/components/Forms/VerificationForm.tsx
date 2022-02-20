@@ -1,12 +1,9 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useState } from "react";
 
-interface MyFormValues {
-  VaccNumber: string;
-}
+const VerificationForm: React.FC<({})>= () => {
 
-const VerificationForm: React.FC<{}>= () => {
-  
+
   return (
     <div className="w-full">
       <Formik
@@ -16,18 +13,18 @@ const VerificationForm: React.FC<{}>= () => {
           chronicDisease: "",
           SideEffectDesc: "",
         }}
+        
         onSubmit={(values) => {
           console.log(values)
         }}
       >
-        
         {({ errors, touched, values }) => (
           <Form  className="w-full">
             <div className="mt-4 w-full">
               <label
                 htmlFor="age"
                 className="font-semibold leading-none text-white"
-                >Enter Age</label>
+                >Enter Age </label>
               <Field
                 type="number"
                 id="age"
@@ -169,9 +166,8 @@ const VerificationForm: React.FC<{}>= () => {
                     <div className="mb-3">
                       <h2 className="text-white">www.google.com</h2>
                     </div>
-                  )}
+                )}
 
-                
               </div>
             )}
           </Form>
