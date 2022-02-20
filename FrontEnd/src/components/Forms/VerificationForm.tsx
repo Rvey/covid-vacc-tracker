@@ -1,9 +1,12 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useState } from "react";
+import { FC } from "react";
 
-const VerificationForm: React.FC<({})>= () => {
+type Props={
+  setDataVaccin:(value:object)=>void
+}
 
-
+const VerificationForm:FC<Props>= ({setDataVaccin}) => {
   return (
     <div className="w-full">
       <Formik
@@ -12,14 +15,17 @@ const VerificationForm: React.FC<({})>= () => {
           VaccNumber: "",
           chronicDisease: "",
           SideEffectDesc: "",
+          effected:""
         }}
         
         onSubmit={(values) => {
-          console.log(values)
+          console.log(values);
         }}
       >
+
         {({ errors, touched, values }) => (
           <Form  className="w-full">
+
             <div className="mt-4 w-full">
               <label
                 htmlFor="age"
@@ -87,7 +93,7 @@ const VerificationForm: React.FC<({})>= () => {
                         <div className="flex items-center gap-3 p-1 rounded-md">
                           <Field
                             type="radio"
-                            name="chronicDisease"
+                            name="effected"
                             className="w-4 h-4 cursor-pointer"
                             value="noSideEffect"
                           />
@@ -96,7 +102,7 @@ const VerificationForm: React.FC<({})>= () => {
                         <div className="flex items-center gap-3 p-1 rounded-md">
                           <Field
                             type="radio"
-                            name="chronicDisease"
+                            name="effected"
                             className="w-4 h-4 cursor-pointer"
                             value="sideEffect"
                           />
@@ -159,7 +165,6 @@ const VerificationForm: React.FC<({})>= () => {
                       />
                     </div>
                   )}
-
    
                 {values.chronicDisease == "yes" &&
                   values.VaccNumber == "firstVacc" && (
@@ -167,9 +172,18 @@ const VerificationForm: React.FC<({})>= () => {
                       <h2 className="text-white">www.google.com</h2>
                     </div>
                 )}
-
               </div>
             )}
+            {values.age > 12 && (
+              <button 
+                className="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded " 
+                type="button"
+                onClick={()=>{setDataVaccin(values)}}
+              >
+                Comfirm
+              </button>
+            )}
+
           </Form>
         )}
       </Formik>

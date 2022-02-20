@@ -10,7 +10,7 @@ export class Appointement {
   @Prop()
   age: string;
   @Prop()
-  vaccinNumber: Number;
+  vaccinNumber: String;
   @Prop()
   chronicDisease: string;
   @Prop()

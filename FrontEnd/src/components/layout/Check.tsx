@@ -2,10 +2,48 @@ import { useState } from "react";
 import UserForm from "../Forms/UserForm";
 import VerificationForm from "../Forms/VerificationForm";
 import MailConfirmation from '../Forms/MailConfirmation'
+import axios from 'axios'
 
-const Check  = ({ values }:any) => {
+export type user ={
+  firstName:string,
+  Email:string,
+  Phone:string,
+  Adress:string,
+  Cin:string,
+}
+
+export type vaccin ={
+  age:number,
+  VaccNumber:string,
+  chronicDisease:string,
+  SideEffectDesc:string,
+  effected:string,
+}
+
+const Check  = () => {
+  const [dataVaccin, setDataVaccin] = useState<vaccin  | undefined>(undefined)
+  const [dataUser, setDataUser] = useState<user  | undefined>(undefined)
   const [next, setNext]=  useState(0)
-  
+    
+  function sendData(){
+    axios
+      .post('http://localhost:4000/appointements',{
+          name: dataUser?.firstName,
+          age: dataVaccin?.age,
+          vaccinNumber: dataVaccin?.VaccNumber,
+          chronicDisease: dataVaccin?.chronicDisease,
+          effected: dataVaccin?.SideEffectDesc,
+          effectedDetails: dataVaccin?.effected,
+          chronicDiseaseDetails:dataVaccin?.SideEffectDesc,
+          phoneNumber: dataUser?.Phone,
+          email: dataUser?.Email,
+          adress: dataUser?.Adress,
+          cin: dataUser?.Cin
+      })
+      .then(res=>console.log(res))
+      .catch(err => console.log(err))
+  }
+
   return (
     <div>
     <div className="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0">
@@ -15,11 +53,11 @@ const Check  = ({ values }:any) => {
           <div className="mt-6 md:mt-0 flex justify-start flex-col md:flex-row items-start md:items-center space-y-4 md:space-x-6 xl:space-x-8 w-full">
             {
               next == 0 ?(
-                <VerificationForm />
+                <VerificationForm  setDataVaccin={setDataVaccin} />
               ): next == 1 ?(
-                <UserForm  />
+                <UserForm  setDataUser={setDataUser} />
               ) : next == 2  ?(
-                <MailConfirmation />
+                <MailConfirmation  />
               ):null
             }
           </div>
@@ -47,6 +85,7 @@ const Check  = ({ values }:any) => {
                 next == 2 && (
                   <button 
                     className="bg-transparent mx-5 hover:bg-yellow-400 text-yellow-400 font-semibold hover:text-white text-sm py-2 px-4 border border-yellow-200 hover:border-transparent rounded mt-5 ml-3" 
+                    onClick={sendData}
                   >Send</button>
               )
             }
